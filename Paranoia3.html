@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>WEB1-Javascript</title>
+  <meta charset="utf-8">
+  <script>
+
+
+<!--몸통 색 바꾸는 함수-->
+  var Body={
+    setColor: function(color){
+      document.querySelector('body').style.color=color;
+    },
+
+    setBackgroundColor:function(color){
+      document.querySelector('body').style.backgroundColor=color;
+    }
+  }
+
+<!--링크 전부 선택한 뒤 색깔 바꾸는 함수-->
+  var Link={
+    setColor:function(color){
+      var alist=document.querySelectorAll('a');
+      var i=0;
+      while(i<alist.length){
+        alist[i].style.color=color;
+        i=i+1;
+      }
+    }
+  }
+
+
+<!--버튼을 누르면 배경, 글자, 링크 색 변환함-->
+
+  function nightDayHandler(self){
+    if(self.value=='night'){
+      Body.setBackgroundColor('black');
+      Body.setColor('white');
+      self.value='day';
+      Link.setColor('powderblue');
+
+    } else {
+
+      Body.setBackgroundColor('white');
+      Body.setColor('black');
+      self.value='night';
+      Link.setColor('blue');
+      }
+    }
+    </script>
+  </head>
+
+  <body>
+    <h1><a href="file:///C:/Users/AlphaBeta/Desktop/WEB/Paranoia.html">WEB</a></h1>
+    <input type="button" value="night" onclick="nightDayHandler(this);">
+
+    <div id="grid">
+      <div>
+      <ol>
+        <li>  <a href="file:///C:/Users/AlphaBeta/Desktop/WEB/Paranoia2.html">html</a></li>
+        <li>  <a href="file:///C:/Users/AlphaBeta/Desktop/WEB/Paranoia3.html">css</a></li>
+        <li>  <a href="file:///C:/Users/AlphaBeta/Desktop/WEB/Paranoia4.html">Javascript</a>  </li>
+      </ol>
+    </div>
+
+      <div id="article">
+        <h2>What is CSS?</h2>
+        <p style="margin-top:40px;">
+          종속형 시트 또는 캐스케이딩 스타일 시트(Cascading Style Sheets, CSS)는 마크업
+           언어가 실제 표시되는 방법을 기술하는
+          스타일 언어(style sheet language)로[1], HTML과 XHTML에 주로 쓰이며,
+           XML에서도 사용할 수 있다. 기본 파일 명 W3C의 표준이며, 레이아웃과 스
+           타일을 정의할 때의 자유도가 높다.기본 파일명[2]은 style.css이다.
+            마크업 언어(ex: HTML)가 웹사
+            이트의 몸체를 담당한다면 CSS는 옷과 액세서리처럼 꾸미는 역할을 담당한다고 할 수 있다.
+             즉, HTML 구조는 그대로 두고 CSS 파일만 변경해도 전혀 다른 웹사이트처럼 꾸밀 수 있다.
+            현재 개발 중인 CSS3의 경우 그림자 효과, 그라데이션, 변
+            형 등 그래픽 편집 프로그램으로 제작한 이미지를 대체할 수 있
+            는 기능이 추가되었다. 또한 다양한 애니메이션 기능이 추가되어 어
+            도비 플래시를 어느 정도 대체하고 있다
+        </p></div>
+      </div>
+
+<img src="img.jpg" width="40%">
+
+    <br><br>
+    <input type="button" value="night" onclick="nightDayHandler(this);">
+    <link rel="stylesheet" href="style.css">
+
+</body>
+  </html>
